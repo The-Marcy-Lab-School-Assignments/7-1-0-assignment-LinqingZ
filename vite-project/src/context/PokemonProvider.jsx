@@ -1,7 +1,6 @@
-import { createContext, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import handleFetch from '../utils/handleFetch';
-
-const PokemonContext = createContext();
+import PokemonContext from "./PokemonContext";
 
 const starterPokemon = [
     {
@@ -30,10 +29,13 @@ const starterPokemon = [
 const PokemonProvider = ({ children }) => {
     const [allPokemon, setAllPokemon] = useState(starterPokemon);
     const [searchTerm, setSearchTerm] = useState('');
-
+ 
     useEffect(() => {
         handleFetch('http://localhost:4000/pokemon')
-            .then(data => setAllPokemon(data));
+            .then(data => {
+                console.log("data", data);
+                setAllPokemon([...data[0]])
+            });
     }, []);
 
     const addPokemon = (newPokemon) => {
@@ -47,10 +49,10 @@ const PokemonProvider = ({ children }) => {
         });
     };
 
-    const filteredPokemon = allPokemon.filter(p => p.name.toLowerCase().includes(searchTerm.toLowerCase()));
-
+    const filteredPokemon = allPokemon.filter(p => p && p.name && p.name.toLowerCase().includes(searchTerm.toLowerCase()));
+    
     const contextValues = {
-        pokemons: filteredPokemon,
+        pokemon: filteredPokemon,
         addPokemon,
         setSearchTerm
     };
@@ -62,4 +64,4 @@ const PokemonProvider = ({ children }) => {
     );
 };
 
-export { PokemonContext, PokemonProvider };
+export default PokemonProvider;

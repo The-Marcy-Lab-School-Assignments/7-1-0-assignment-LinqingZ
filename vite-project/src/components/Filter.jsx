@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { PokemonContext } from '../context/PokemonProvider';
+import PokemonContext from '../context/PokemonContext';
 
 const Filter = () => {
     const { setSearchTerm } = useContext(PokemonContext);
