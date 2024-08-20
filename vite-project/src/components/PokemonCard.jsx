@@ -2,8 +2,6 @@ import { useState } from 'react';
 
 const PokemonCard = ({ pokemon }) => {
     const [showFront, setShowFront] = useState(true);
-    console.log("PokemonCard--------------", pokemon);
-
     return (
         <div className="ui card" onClick={() => setShowFront(!showFront)}>
             <div>

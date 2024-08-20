@@ -28,13 +28,14 @@ const starterPokemon = [
 
 const PokemonProvider = ({ children }) => {
     const [allPokemon, setAllPokemon] = useState(starterPokemon);
-    const [searchTerm, setSearchTerm] = useState('');
- 
+    // const [searchTerm, setSearchTerm] = useState('');
+    const [filteredPokemon, setFilteredPokemon] = useState("");
+
     useEffect(() => {
         handleFetch('http://localhost:4000/pokemon')
             .then(data => {
-                console.log("data", data);
-                setAllPokemon([...data[0]])
+                console.log("data", data[0]);
+                setAllPokemon(data[0]);
             });
     }, []);
 
@@ -49,12 +50,11 @@ const PokemonProvider = ({ children }) => {
         });
     };
 
-    const filteredPokemon = allPokemon.filter(p => p && p.name && p.name.toLowerCase().includes(searchTerm.toLowerCase()));
-    
     const contextValues = {
-        pokemon: filteredPokemon,
+        pokemon: allPokemon,
         addPokemon,
-        setSearchTerm
+        filteredPokemon: filteredPokemon,
+        setFilteredPokemon
     };
 
     return (

@@ -83,27 +83,6 @@
       "hp": 60,
       "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/12.png",
       "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/12.png"
-    },
-    {
-      "id": 1724172622237,
-      "name": "",
-      "hp": "",
-      "front": "",
-      "back": ""
-    },
-    {
-      "id": 1724172636032,
-      "name": "",
-      "hp": "",
-      "front": "",
-      "back": ""
-    },
-    {
-      "id": 1724174466908,
-      "name": "but",
-      "hp": "90",
-      "front": "dfgas",
-      "back": "asdfs"
     }
   ]
 }
