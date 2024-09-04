@@ -83,6 +83,13 @@
       "hp": 60,
       "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/12.png",
       "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/12.png"
+    },
+    {
+      "id": 1725474599372,
+      "name": "pikachu",
+      "hp": "60",
+      "front": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/020.png",
+      "back": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png"
     }
   ]
 }
